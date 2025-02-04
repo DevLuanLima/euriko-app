@@ -1,0 +1,20 @@
+# Diretórios e arquivos do Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Diretórios do Expo
+.expo/
+.expo-shared/
+
+# Configurações do ambiente
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
