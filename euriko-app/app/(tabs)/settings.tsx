@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: Platform.OS === 'ios' ? 50 : 20, // Respeita a Ilha Dinâmica no iOS
     paddingHorizontal: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
   },
   title: {
     fontSize: 24,

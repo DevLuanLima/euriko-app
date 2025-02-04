@@ -22,7 +22,7 @@ export default function TabLayout() {
           borderRadius: 30,
           marginHorizontal: 20,
           marginBottom: 20,
-          backgroundColor: '#000',
+          backgroundColor: '#181818',
           borderTopWidth: 0,
           shadowColor: '#000', // Sombra para iOS
           shadowOpacity: 0.2,
