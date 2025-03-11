@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image, ImageBackground  } from 'react-native';
 import { ThemedView } from '@/components/ThemedView';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -7,6 +7,7 @@ export default function HomeScreen() {
   const [isBalanceVisible, setIsBalanceVisible] = useState(false);
 
   return (
+    
     <ThemedView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
@@ -73,9 +74,18 @@ export default function HomeScreen() {
         </TouchableOpacity>
 
         <TouchableOpacity style={[styles.card, styles.cardCommunity]}>
-          <Text style={styles.cardText}>Join the community</Text>
-          <Text style={styles.cardPlus}>+</Text>
+          <ImageBackground
+            source={{
+              uri: "https://unsplash.com/pt-br/fotografias/uma-rua-da-cidade-com-edificios-altos-ao-fundo-e3E7EZp-9OE",
+            }}
+            style={styles.backgroundImage}
+            imageStyle={styles.imageStyle}
+          >
+            <Text style={styles.cardText}>Join the community</Text>
+            <Text style={styles.cardPlus}>+</Text>
+          </ImageBackground>
         </TouchableOpacity>
+ 
 
         <View style={[styles.card, styles.cardProfit]}>
           <Text style={styles.cardProfitText}>+32%</Text>
@@ -254,6 +264,16 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  imageStyle: {
+    borderRadius: 10,
   },
   
 });
