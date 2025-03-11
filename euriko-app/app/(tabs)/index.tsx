@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { ThemedView } from '@/components/ThemedView';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function HomeScreen() {
+  const [isBalanceVisible, setIsBalanceVisible] = useState(false);
+
   return (
     <ThemedView style={styles.container}>
       {/* Header */}
@@ -11,35 +14,52 @@ export default function HomeScreen() {
           source={{ uri: 'https://i.pravatar.cc/100' }} 
           style={styles.profileImage}
         />
-        {/* Ícone de configurações */}
-        <TouchableOpacity style={styles.settingsButton}>
-          <Text style={styles.settingsIcon}>⚙️</Text>
-        </TouchableOpacity>
+       <TouchableOpacity style={styles.helpButton}>
+        <Text style={styles.helpText}>Help</Text>
+      </TouchableOpacity>
+
       </View>
 
       {/* Balance Section */}
       <View style={styles.balanceContainer}>
-        <Text style={styles.totalBalanceText}>Total balance</Text>
-        <Text style={styles.balanceAmount}>$1032,32</Text>
+        <View style={styles.balanceHeader}>
+          <Text style={styles.totalBalanceText}>Total balance</Text>
+          <TouchableOpacity onPress={() => setIsBalanceVisible(!isBalanceVisible)}>
+            <MaterialCommunityIcons 
+              name={isBalanceVisible ? "eye" : "eye-off"} 
+              size={24} 
+              color="#AAA"
+              style={styles.eyeIcon}
+            />
+          </TouchableOpacity>
+        </View>
+        <Text style={styles.balanceAmount}>
+          {isBalanceVisible ? '$1032,32' : '****'}
+        </Text>
         <View style={styles.balanceDetails}>
           <View style={styles.detailItem}>
             <Text style={styles.detailLabel}>Invested</Text>
-            <Text style={styles.detailValue}>$16000,141</Text>
+            <Text style={styles.detailValue}>
+              {isBalanceVisible ? '$16000,141' : '****'}
+            </Text>
           </View>
           <View style={styles.detailItem}>
             <Text style={styles.detailLabel}>Earned</Text>
-            <Text style={styles.detailValue}>$600,786</Text>
+            <Text style={styles.detailValue}>
+              {isBalanceVisible ? '$600,786' : '****'}
+            </Text>
           </View>
           <View style={styles.detailItem}>
             <Text style={styles.detailLabel}>Goal</Text>
-            <Text style={styles.detailValue}>$20000,586</Text>
+            <Text style={styles.detailValue}>
+              {isBalanceVisible ? '$20000,586' : '****'}
+            </Text>
           </View>
         </View>
       </View>
 
       {/* Cards Section */}
       <View style={styles.cardsContainer}>
-        {/* Card 1 */}
         <View style={styles.card}>
           <Image
             source={{ uri: 'https://via.placeholder.com/150' }}
@@ -47,19 +67,16 @@ export default function HomeScreen() {
           />
         </View>
 
-        {/* Card 2 */}
         <TouchableOpacity style={[styles.card, styles.cardInvest]}>
           <Text style={styles.cardText}>Invest</Text>
           <Text style={styles.cardPlus}>+</Text>
         </TouchableOpacity>
 
-        {/* Card 3 */}
         <TouchableOpacity style={[styles.card, styles.cardCommunity]}>
           <Text style={styles.cardText}>Join the community</Text>
           <Text style={styles.cardPlus}>+</Text>
         </TouchableOpacity>
 
-        {/* Card 4 */}
         <View style={[styles.card, styles.cardProfit]}>
           <Text style={styles.cardProfitText}>+32%</Text>
           <Text style={styles.cardProfitSubtext}>Goal achieving</Text>
@@ -113,11 +130,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 30,
   },
+  balanceHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   totalBalanceText: {
     fontSize: 18,
     color: '#AAA',
     fontWeight: '400',
-    marginBottom: 5,
+    marginRight: 10,
+  },
+  eyeIcon: {
+    marginLeft: 5,
   },
   balanceAmount: {
     fontSize: 48,
@@ -216,4 +240,20 @@ const styles = StyleSheet.create({
     color: '#888',
     fontSize: 12,
   },
+  helpButton: {
+    borderWidth: 2,
+    borderColor: '#6A706E',
+    backgroundColor: 'transparent',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+  },
+  
+  helpText: {
+    color: 'white',
+    fontSize: 10,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  
 });
