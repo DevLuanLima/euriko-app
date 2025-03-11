@@ -76,7 +76,7 @@ export default function HomeScreen() {
         <TouchableOpacity style={[styles.card, styles.cardCommunity]}>
           <ImageBackground
             source={{
-              uri: "https://unsplash.com/pt-br/fotografias/uma-rua-da-cidade-com-edificios-altos-ao-fundo-e3E7EZp-9OE",
+              uri: "https://picsum.photos/800/600",
             }}
             style={styles.backgroundImage}
             imageStyle={styles.imageStyle}
