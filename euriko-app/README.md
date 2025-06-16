@@ -1,50 +1,104 @@
-# Welcome to your Expo app 👋
+# Euriko App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo desenvolvido com Expo e React Native.
 
-## Get started
+## Pré-requisitos
 
-1. Install dependencies
+Antes de começar, certifique-se de ter instalado:
 
+- [Node.js](https://nodejs.org/) (versão LTS recomendada)
+- [Git](https://git-scm.com/)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
+- [Expo Go](https://expo.dev/client) (para testar no dispositivo móvel)
+
+## Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone [URL_DO_REPOSITÓRIO]
+   cd euriko-app
+   ```
+
+2. Instale as dependências:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. Instale o Expo CLI globalmente (caso ainda não tenha):
    ```bash
-    npx expo start
+   npm install -g expo-cli
    ```
 
-In the output, you'll find options to open the app in a
+## Executando o Projeto
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+1. Inicie o projeto:
+   ```bash
+   npx expo start
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+2. Após iniciar, você terá várias opções para executar o aplicativo:
+   - Pressione `a` para abrir no emulador Android
+   - Pressione `i` para abrir no simulador iOS
+   - Escaneie o QR Code com o aplicativo Expo Go (Android) ou câmera (iOS)
 
-## Get a fresh project
+## Estrutura do Projeto
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+euriko-app/
+├── app/                 # Diretório principal do aplicativo
+├── assets/             # Recursos estáticos (imagens, fontes, etc.)
+├── components/         # Componentes reutilizáveis
+├── constants/          # Constantes e configurações
+└── ...
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Desenvolvimento
 
-## Learn more
+- O projeto utiliza [Expo Router](https://docs.expo.dev/router/introduction/) para navegação baseada em arquivos
+- Os componentes principais estão localizados no diretório `app/`
+- Estilos e temas podem ser encontrados em `constants/`
 
-To learn more about developing your project with Expo, look at the following resources:
+## Scripts Disponíveis
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- `npm start` - Inicia o servidor de desenvolvimento
+- `npm run android` - Inicia o aplicativo no emulador Android
+- `npm run ios` - Inicia o aplicativo no simulador iOS
+- `npm run web` - Inicia o aplicativo na versão web
 
-## Join the community
+## Troubleshooting
 
-Join our community of developers creating universal apps.
+Se você encontrar problemas durante a instalação ou execução:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Limpe o cache do npm:
+   ```bash
+   npm cache clean --force
+   ```
+
+2. Remova a pasta node_modules e reinstale as dependências:
+   ```bash
+   rm -rf node_modules
+   npm install
+   ```
+
+3. Certifique-se de que todas as dependências estão atualizadas:
+   ```bash
+   npx expo install
+   ```
+
+## Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## Licença
+
+Este projeto está sob a licença [MIT](LICENSE).
+
+## Contato
+
+[Seu Nome] - [seu.email@exemplo.com]
+
+Link do Projeto: [https://github.com/seu-usuario/euriko-app](https://github.com/seu-usuario/euriko-app)
